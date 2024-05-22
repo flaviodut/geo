@@ -79,7 +79,8 @@
       function success(position) {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
-        const mapLink = `https://www.openstreetmap.org/#map=18/${lat}/${lon}`;
+        // const mapLink = `https://www.openstreetmap.org/#map=18/${lat}/${lon}`;
+        const mapLink = `https://maps.google.com/maps?q=${lat},${lon}&hl=es&z=14&amp;output=embed`;
 
         clearResult();
 
@@ -89,6 +90,7 @@
         const iframe = document.createElement('iframe');
         iframe.src = mapLink;
         iframe.frameBorder = '0';
+        iframe.scrolling = 'no';
 
         const anchor = document.createElement('a');
         anchor.textContent = 'Abra o mapa no OpenStreetMap';
